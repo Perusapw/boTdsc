@@ -72,9 +72,9 @@ if (clientID && clientSecret) {
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
             {
-                host: "lavalink.techpoint.world",
+                host: "lava-v3.ajieblogs.eu.org",
                 port: 80,
-                password: "techpoint"
+                password: "https://dsc.gg/ajidevserver"
             },
         ],
         send(id, payload) {
@@ -151,6 +151,22 @@ fs.readdirSync('./src/handlers').forEach((dir) => {
         require(`./handlers/${dir}/${handler}`)(client);
     });
 });
+
+
+client.on("messageCreate", message => {
+  if (message.content.includes("ip")) {
+    message.channel.send("soon ya! :D")
+  }
+  if (message.content.includes("Ip")) {
+    message.channel.send("soon ya! :D")
+  }
+  if (message.content.includes("iP")) {
+    message.channel.send("soon ya! :D")
+  }
+  if (message.content.includes("IP")) {
+    message.channel.send("soon ya! :D")
+  }
+})
 
 client.login(process.env.DISCORD_TOKEN);
 
